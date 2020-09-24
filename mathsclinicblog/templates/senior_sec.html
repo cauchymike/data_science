@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body>
+    <div class="container">
+        <h3>DSME: Useful Materials for Data science.</h3>
+        <p>Feel free to upload data science materials in pdf format here. </p>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <p class="bg-info" style="padding: 15px;">
+          {% for message in messages %}
+            {{ message }}<br>
+          {% endfor %}
+          </p>
+        {% endif %}
+      {% endwith %}
+        <div>
+          <h3>Upload your file here!:</h3>
+          <form method="POST" action="/upload_senior" enctype=multipart/form-data>
+            <input type=file name=file>
+            <input type=submit value=Upload>
+          </form>
+        </div>
+        <div>
+          <h3>These are the Senior secondary school materials available to download!:</h3>
+          <table class="table table-striped">
+            <tr>
+              <th>Filename</th>
+              <th>Last Modified</th>
+              <th>Type</th>
+              <th></th>
+            </tr>
+            {% for f in contents_senior %}
+            <tr>
+              <td>{{ f.key }}</td>
+              <td>{{ f.last_modified | datetimeformat }}</td>
+              <td>{{ f.key | file_type }}</td>
+              <td class="td-buttons">
+
+                <form class="download-form" action="{{ url_for('users.download_senior') }}" method="POST">
+                  <input type="hidden" name="key" value="{{ f.key }}">
+                  <button type="submit" class="btn btn-primary btn-lg" id ="yes">
+                    <i class="fa fa-download" aria-hidden="true">Download</i>
+                  </button>
+                </form>
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+          
+        </div>
+    </div>
+  </body>
+
+
+

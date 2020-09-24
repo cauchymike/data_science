@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <p>DATA SCIENCE MADE EASY blog!</p>
+</head>
+<body>
+
+<p>Dear {{ user.username }},</p>
+<p>Welcome to <b>DSME</b>!</p>
+<p>To confirm your account please <a href="{{ url_for('users.confirm', token=token, _external=True) }}">click here</a>.</p>
+<p>Alternatively, you can paste the following link in your browser's address bar:</p>
+<p>{{ url_for('users.confirm', token=token, _external=True) }}</p>
+<p>Sincerely,</p>
+<p>Cauchymike</p>
+<p><small>Note: replies to this email address are not monitored.</small></p>
+
+</body>
+</html>

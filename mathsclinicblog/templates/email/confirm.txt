@@ -1,0 +1,8 @@
+Dear {{ user.username }},
+Welcome to DATA SCIENCE MADE EASY blog!
+To confirm your account please click on the following link:
+{{ url_for('users.confirm', token=token, _external=True) }}
+Sincerely,
+Cauchymike!
+Note: replies to this email address are not monitored
+

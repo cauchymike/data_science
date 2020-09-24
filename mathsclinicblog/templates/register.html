@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class= "formwrapper">
+    <form method="POST">
+        {{form.hidden_tag()}}
+       <div class="form-group">
+           {{form.email.label(class="form-control-label")}}
+           {{form.email(class="form-control form-control-lg")}}
+       </div>
+        <div class="form-group">
+            {{form.username.label(class="form-control-label")}}
+            {{form.username(class="form-control form-control-lg")}}
+        </div>
+
+
+        <div class="form-group">
+            {{form.age.label(class="form-control-label")}}
+            {{form.age(class="form-control form-control-lg")}}
+        </div>
+
+    </div>
+    <div class="form-group">
+        {{form.class_name.label(class="form-control-label")}}
+        {{form.class_name(class="form-control form-control-lg")}}
+    </div>
+
+
+       <div class="form-group">
+           {{form.password.label(class="form-control-label")}}
+           {{form.password(class="form-control form-control-lg")}}
+       </div>
+     <div class="form-group">
+         {{form.pass_confirm.label(class="form-control-label")}}
+         {{form.pass_confirm(class="form-control form-control-lg")}}
+     </div>
+     <div class="form-group">
+        {{form.about_me.label(class="form-control-label")}}
+        {{form.about_me(class="form-control form-control-lg")}}
+    </div>
+        {{form.submit(class="btn btn-outline-success my-2 my-sm-0")}}
+
+    </form>
+
+
+</div>
+
+
+
+{% endblock %}

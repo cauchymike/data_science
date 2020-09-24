@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+  <form method="POST">
+    {{form.hidden_tag()}}
+    <div class="form-group">
+    {{form.email.label(class="form-group")}}
+    {{form.email(class="form-control") }}
+    </div>
+    <div class="form-group">
+    {{form.password.label(class="form-group")}}
+      {{form.password (class="form-control")}}
+    </div>
+     <div class="form-group">
+    {{form.submit(class="btn btn-success")}}
+     </div>
+  </form>
+  <p>Forgot Your Password?
+   <a href="{{url_for('users.password_reset_request') }}">Click to Reset Your Password.</a></p>
+   <p>New user? <a href="{{ url_for('users.register') }}">Click here to register</a>.</p>
+{% endblock %}

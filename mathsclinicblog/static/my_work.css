@@ -1,0 +1,25 @@
+h1{
+   color: red;
+}
+
+li{
+  color: rgb(90,50,100)
+}
+p{
+ color: #eab01c;
+}
+h3{
+  color: rgba(30,50,140,1)
+}
+body{
+   background: green;
+}
+.mike{
+     background: yellow;
+}
+.seun{
+  background:blue;
+}
+#kkk{
+   color: blue
+}
