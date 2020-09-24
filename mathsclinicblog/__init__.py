@@ -46,6 +46,11 @@ app.config["UPLOAD_FOLDER"] = "uploads"
 app.config["MATHSCLINICCOMMENT_COMMENTS_PER_PAGE"] = 30
 app.jinja_env.filters['datetimeformat'] = datetimeformat
 app.jinja_env.filters['file_type'] = file_type
+app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+    "pool_size":20,
+    "pool_pre_ping":True,
+    "pool_recycle": 3600,
+}
 
 S3_BUCKET = os.environ.get("S3_BUCKET")
 S3_KEY = os.environ.get("S3_KEY")
