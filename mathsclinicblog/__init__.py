@@ -24,9 +24,10 @@ app = Flask(__name__)
 ### DATABASE SETUP ##########
 ########################
 basedir = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(path.join(basedir, '.env'))
 
 app.config['SECRET_KEY'] = "jdhblfihriujromeyd8posi09547flujhcku53igkyudgsv423u76igsd7i6qwr72358ud90dxh8o387ds"
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://be6a44475b1470:47e0b5d1@us-cdbr-east-02.cleardb.com/heroku_ea2253b4b00f010"
+app.config['SQLALCHEMY_DATABASE_URI']= environ.get('CLEARDB_DATABASE_URL') 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['MATHSCLINIC_MAIL_SUBJECT_PREFIX'] = 'DSME blog'
 app.config['MATHSCLINIC_MAIL_SENDER'] = 'michealakinkuotu6@gmail.com'
