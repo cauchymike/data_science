@@ -282,7 +282,7 @@ def storage_junior():
     #summaries = my_bucket.objects.all()
     my_bucket = get_bucket()
     summaries_3 = []
-    for obj_white in my_bucket.objects.filter(Prefix = "Junior_school/"):
+    for obj_white in my_bucket.objects.filter(Prefix = "junior_school/"):
         summaries_3.append(obj_white)
     return render_template('junior_sec.html', my_bucket = my_bucket, contents_junior = summaries_3)
 
@@ -323,7 +323,7 @@ def storage_senior():
     #summaries = my_bucket.objects.all()
     my_bucket = get_bucket()
     summaries_4 = []
-    for obj_white in my_bucket.objects.filter(Prefix = "Senior_school/"):
+    for obj_white in my_bucket.objects.filter(Prefix = "senior_school/"):
         summaries_4.append(obj_white)
     return render_template('junior_sec.html', my_bucket = my_bucket, contents_senior = summaries_4)
 
