@@ -3,8 +3,8 @@
 
 <body>
     <div class="container">
-        <h3>DSME: Useful Materials for Data science.</h3>
-        <p>Feel free to upload data science materials in pdf format here. </p>
+        <h3>DSME: Useful files for Pupils in Basic school.</h3><br>
+        <p>Feel free to upload useful basic school materials in pdf format here. </p>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
           <p class="bg-info" style="padding: 15px;">
@@ -14,15 +14,14 @@
           </p>
         {% endif %}
       {% endwith %}
-        <div>
-          <h3>Upload your file here!:</h3>
+        <div><br>
           <form method="POST" action="/upload_basic" enctype=multipart/form-data>
             <input type=file name=file>
             <input type=submit value=Upload>
           </form>
         </div>
         <div>
-          <h3>These are the Primary school materials available to download!:</h3>
+          <h3>These are the Basic school materials available to download!:</h3>
           <table class="table table-striped">
             <tr>
               <th>Filename</th>
