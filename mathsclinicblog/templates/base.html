@@ -37,6 +37,7 @@ body {
       </li>
     </ul>
       {% if current_user.is_authenticated %}
+     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="{{url_for('core.index')}}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           More Options
@@ -53,6 +54,7 @@ body {
             
         </div>
       </li>
+      </ul>
 
       {% else %}
       <ul class = "navbar-nav mr-auto" >
