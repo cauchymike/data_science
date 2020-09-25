@@ -18,6 +18,7 @@ dnspython==2.0.0
 email-validator==1.1.1
 Flask==1.1.2
 Flask-Mail==0.9.1
+Flask-PageDown==0.3.0
 Flask-Dance==3.0.0
 Flask-Environ==0
 Flask-Login==0.5.0
