@@ -3,7 +3,7 @@
 
 <body>
     <div class="container">
-        <h3>DSME: Useful Materials for Data science.</h3>
+        <h3>DSME: Useful Materials for Data science.</h3><br>
         <p>Feel free to upload data science materials in pdf format here. </p>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -15,14 +15,13 @@
         {% endif %}
       {% endwith %}
         <div>
-          <h3>Upload your file here!:</h3>
           <form method="POST" action="/upload_ds" enctype=multipart/form-data>
             <input type=file name=file>
             <input type=submit value=Upload>
           </form>
         </div>
-        <div>
-          <h3>These are our sweet questions!:</h3>
+        <div><br>
+          <h3>These are the available data science materials to download!:</h3>
           <table class="table table-striped">
             <tr>
               <th>Filename</th>
