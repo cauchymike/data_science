@@ -8,6 +8,7 @@ from flask_mail import Message
 from flask_sqlalchemy import SQLAlchemy
 from threading import Thread
 import smtplib, ssl
+from flask_pagedown import PageDown
 from os import environ, path
 import pymysql
 from mathsclinicblog.filters import datetimeformat, file_type
@@ -61,6 +62,7 @@ S3_SECRET = os.environ.get("S3_SECRET_ACCESS_KEY")
 mail = Mail(app)
 db = SQLAlchemy(app)
 Migrate(app,db)
+pagedown = PageDown(app)
 
 
 #########################
