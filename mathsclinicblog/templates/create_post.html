@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{{ pagedown.include_pagedown() }}
   <div class="container">
     <form class="form-group" method="POST">
       {{form.hidden_tag()}}
