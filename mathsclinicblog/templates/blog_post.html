@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{{ pagedown.include_pagedown() }}
 <div class="jumbotron">
   {% with messages = get_flashed_messages() %}
         {% if messages %}
