@@ -7,6 +7,7 @@ from flask_mail import Mail
 from flask_mail import Message
 from flask_sqlalchemy import SQLAlchemy
 from flaskext.markdown import Markdown
+from flask_flatpages import FlatPages
 from threading import Thread
 import smtplib, ssl
 from flask_pagedown import PageDown
@@ -65,6 +66,7 @@ db = SQLAlchemy(app)
 Migrate(app,db)
 pagedown = PageDown(app)
 Markdown(app)
+pages = FlatPages(app)
 
 
 #########################
