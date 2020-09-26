@@ -66,7 +66,7 @@ mail = Mail(app)
 db = SQLAlchemy(app)
 Migrate(app,db)
 pagedown = PageDown(app)
-Markdown(app, extensions=['fenced_code'])
+Markdown(app, extensions=['fenced_code','codehilite'])
 pages = FlatPages(app)
 
 
