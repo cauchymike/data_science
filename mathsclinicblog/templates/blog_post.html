@@ -13,9 +13,9 @@
       {% endwith %}
   <h1>{{post.title}}</h1>
   <h2>Written by: {{post.author.username}}</h2>
-  <h3>Published: {{post.date.strftime('%B %d, %Y')}}</h3>
+  <h3>Published: {{post.date.strftime('%B %d, %Y')}}</h3><br>
   {% filter markdown %}
-  <p>{{post.text}}</p>
+    {{post.text}}
    {% endfilter %}
   {% if post.author == current_user %}
   <div>
