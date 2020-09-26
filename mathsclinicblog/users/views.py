@@ -5,6 +5,7 @@ from mathsclinicblog.models import User, BlogPost
 from mathsclinicblog.users.forms import RegistrationForm,LoginForm,UpdateUserForm, PasswordResetForm,PasswordResetRequestForm
 from mathsclinicblog.users.picture_handler import add_profile_pic
 from flask import send_from_directory, send_file
+from flask_flatpages import FlatPages, pygments_style_defs
 import boto3
 import os
 from mathsclinicblog import app
