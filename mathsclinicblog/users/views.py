@@ -12,9 +12,14 @@ from mathsclinicblog import app
 from mathsclinicblog.s3_storage import upload_file, list_files, download_file
 from mathsclinicblog.email import send_email
 from mathsclinicblog.resourses import get_bucket, get_buckets_list
-from mathsclinicblog.filters import datetimeformat, file_type
+from mathsclinicblog.filters import datetimeformat, file_type+
+from pygments.formatters import HtmlFormatter
+from pygments import lexers
 
 users = Blueprint('users',__name__)
+
+lexers.get_lexer_by_name('python')
+formatter = HtmlFormatter(style = 'tango')
 
 
 @users.before_app_request  #registers a function that runs before the view function
@@ -27,7 +32,7 @@ def before_request():
         
 @users.route('/pygments.css')
 def pygments_css():
-    return pygments_style_defs('tango'), 200, {'Content-Type': 'text/css'}
+    return pygments_style_defs('tango'), 200, {'Content-Type': 'python'}
 
 
 @users.route('/unconfirmed')
