@@ -23,6 +23,10 @@ def before_request():
         if not current_user.confirmed and request.endpoint and request.blueprint != 'users':
                 #and request.endpoint != 'static':
             return redirect(url_for('users.unconfirmed'))#end point is users.unconfirmed
+        
+@users.route('/pygments.css')
+        def pygments_css():
+            return pygments_style_defs('tango'), 200, {'Content-Type': 'text/css'}
 
 
 @users.route('/unconfirmed')
