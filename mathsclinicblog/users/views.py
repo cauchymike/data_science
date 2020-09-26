@@ -12,7 +12,7 @@ from mathsclinicblog import app
 from mathsclinicblog.s3_storage import upload_file, list_files, download_file
 from mathsclinicblog.email import send_email
 from mathsclinicblog.resourses import get_bucket, get_buckets_list
-from mathsclinicblog.filters import datetimeformat, file_type+
+from mathsclinicblog.filters import datetimeformat, file_type
 from pygments.formatters import HtmlFormatter
 from pygments import lexers
 
