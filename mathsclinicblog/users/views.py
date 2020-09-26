@@ -19,7 +19,7 @@ from pygments import lexers
 users = Blueprint('users',__name__)
 
 lexers.get_lexer_by_name('python')
-formatter = HtmlFormatter(style = 'tango')
+formatter = HtmlFormatter(full = True)
 
 
 @users.before_app_request  #registers a function that runs before the view function
