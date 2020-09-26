@@ -25,8 +25,8 @@ def before_request():
             return redirect(url_for('users.unconfirmed'))#end point is users.unconfirmed
         
 @users.route('/pygments.css')
-        def pygments_css():
-            return pygments_style_defs('tango'), 200, {'Content-Type': 'text/css'}
+def pygments_css():
+    return pygments_style_defs('tango'), 200, {'Content-Type': 'text/css'}
 
 
 @users.route('/unconfirmed')
