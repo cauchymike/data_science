@@ -14,8 +14,9 @@
   <h1>{{post.title}}</h1>
   <h2>Written by: {{post.author.username}}</h2>
   <h3>Published: {{post.date.strftime('%B %d, %Y')}}</h3>
+  {% filter markdown %}
   <p>{{post.text}}</p>
-
+   {% endfilter %}
   {% if post.author == current_user %}
   <div>
     <a href="{{url_for('blog_posts.update',blog_post_id=post.id)}}">Update</a>
