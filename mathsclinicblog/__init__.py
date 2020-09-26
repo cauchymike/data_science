@@ -6,6 +6,7 @@ from flask_migrate import Migrate
 from flask_mail import Mail
 from flask_mail import Message
 from flask_sqlalchemy import SQLAlchemy
+from flaskext.markdown import Markdown
 from threading import Thread
 import smtplib, ssl
 from flask_pagedown import PageDown
@@ -63,6 +64,7 @@ mail = Mail(app)
 db = SQLAlchemy(app)
 Migrate(app,db)
 pagedown = PageDown(app)
+Markdown(app)
 
 
 #########################
