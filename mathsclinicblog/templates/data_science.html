@@ -33,7 +33,7 @@
             {% for f in contents_ds %}
             <tr>
               {% if '.pdf' in f.key %}
-              <td>{{ f.key }}</td>
+              <td>{{ f.key.split('/')[1]}}</td>
               <td>{{ f.last_modified | datetimeformat }}</td>
               <td>{{ f.key | file_type }}</td>
               <td>{{ f.size | convert_bytes }}</td>
