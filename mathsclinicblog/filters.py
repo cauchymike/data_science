@@ -27,3 +27,13 @@ def file_type(key):
             filetype = additional_file_types[file_extension]
 
         return filetype
+    
+def convert_bytes(num):
+    "converting byte to mb"
+    if num == 0:
+        return "0B"
+    size_name = ('B', 'KB', 'MB', 'GB', 'TB')
+    i = int(math.floor(math.log(num, 1024)))
+    p = math.pow(1024, i)
+    s = round(num/p, 2)
+    return f"{s}{size_name[i]}"
