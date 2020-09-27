@@ -38,7 +38,7 @@
               <td>{{ f.size | convert_bytes }}</td>
               <td class="td-buttons">
 
-                <form class="download-form" action="{{ url_for('users.download_basic') }}" method="POST">
+                <form class="download-form" action="{{ url_for('users.download_junior') }}" method="POST">
                   <input type="hidden" name="key" value="{{ f.key }}">
                   <button type="submit" class="btn btn-primary btn-lg" id ="yes">
                     <i class="fa fa-download" aria-hidden="true">Download</i>
