@@ -13,7 +13,7 @@ import smtplib, ssl
 from flask_pagedown import PageDown
 from os import environ, path
 import pymysql
-from mathsclinicblog.filters import datetimeformat, file_type
+from mathsclinicblog.filters import datetimeformat, file_type, convert_bytes
 from dotenv import load_dotenv
 
 
@@ -50,6 +50,7 @@ app.config[" FLATPAGES_EXTENSION"] = [".md"]
 app.config["MATHSCLINICCOMMENT_COMMENTS_PER_PAGE"] = 30
 app.jinja_env.filters['datetimeformat'] = datetimeformat
 app.jinja_env.filters['file_type'] = file_type
+app.jinja_env.filters['convert_bytes'] = convert_bytes
 app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
     "pool_size":20,
     "pool_pre_ping":True,
