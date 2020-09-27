@@ -27,13 +27,16 @@
               <th>Filename</th>
               <th>Last Modified</th>
               <th>Type</th>
+              <th>Size</th>
               <th></th>
             </tr>
             {% for f in contents_senior %}
             <tr>
+             {% if '.pdf' in f.key %}
               <td>{{ f.key }}</td>
               <td>{{ f.last_modified | datetimeformat }}</td>
               <td>{{ f.key | file_type }}</td>
+              <td>{{ f.size | convert_bytes }}</td>
               <td class="td-buttons">
 
                 <form class="download-form" action="{{ url_for('users.download_senior') }}" method="POST">
@@ -43,6 +46,7 @@
                   </button>
                 </form>
               </td>
+              {% endif %}
             </tr>
             {% endfor %}
           </table>
