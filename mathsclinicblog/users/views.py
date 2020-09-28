@@ -335,7 +335,7 @@ def storage_senior():
     summaries_4 = []
     for obj_white in my_bucket.objects.filter(Prefix = "senior_school/"):
         summaries_4.append(obj_white)
-    return render_template('junior_sec.html', my_bucket = my_bucket, contents_senior = summaries_4)
+    return render_template('senior_sec.html', my_bucket = my_bucket, contents_senior = summaries_4)
 
     
 
