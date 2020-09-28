@@ -27,26 +27,26 @@
               <th>Filename</th>
               <th>Last Modified</th>
               <th>Type</th>
-              <th> Size</th>
+              <th>Size</th>
               <th></th>
             </tr>
             {% for f in contents_basic %}
             <tr>
                 {% if '.pdf' in f.key %}
-              <td>{{ f.key.split('/)[1] }}</td>
+              <td>{{ f.key.split('/')[1] }}</td>
               <td>{{ f.last_modified | datetimeformat }}</td>
               <td>{{ f.key | file_type }}</td>
               <td>{{ f.size | convert_bytes }}</td>
               <td class="td-buttons">
 
-                <form class="download-form" action="{{ url_for('users.download_basic') }}" method="POST">
+                <form class="download-form" action="{{url_for('users.download_basic') }}" method="POST">
                   <input type="hidden" name="key" value="{{ f.key }}">
                   <button type="submit" class="btn btn-primary btn-lg" id ="yes">
                     <i class="fa fa-download" aria-hidden="true">Download</i>
                   </button>
                 </form>
               </td>
-                {% endif %}
+               {% endif %}
             </tr>
             {% endfor %}
           </table>
