@@ -199,7 +199,7 @@ def upload():
     file = request.files['file']
 
     my_bucket = get_bucket()
-    my_bucket.Object.filter(Prefix="data_science/", file.filename).put(Body=file)
+    my_bucket.Object.filter(file.filename, Prefix="data_science/" ).put(Body=file)
 
     flash('File uploaded successfully')
     return redirect(url_for('users.storage_ds'))
@@ -239,7 +239,7 @@ def upload_basic():
     file = request.files['file']
 
     my_bucket = get_bucket()
-    my_bucket.Object.filter(Prefix ="basic_school/", file.filename ).put(Body=file)
+    my_bucket.Object.filter(file.filename, Prefix ="basic_school/" ).put(Body=file)
 
     flash('File uploaded successfully')
     return redirect(url_for('users.storage_basic'))
