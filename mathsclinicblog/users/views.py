@@ -199,7 +199,7 @@ def upload():
     file = request.files['file']
 
     my_bucket = get_bucket()
-    my_bucket.objects.filter_by(Prefix="data_science/", file.filename).put(Body=file)
+    my_bucket.objects.filter(Prefix="data_science/", file.filename).put(Body=file)
 
     flash('File uploaded successfully')
     return redirect(url_for('users.storage_ds'))
@@ -212,7 +212,7 @@ def storage_ds():
     #summaries = my_bucket.objects.all()
     my_bucket = get_bucket()
     summaries_1 = []
-    for obj_white in my_bucket.objects.filter_by(Prefix = "data_science/"):
+    for obj_white in my_bucket.objects.filter(Prefix = "data_science/"):
         summaries_1.append(obj_white)
     return render_template('data_science.html', my_bucket = my_bucket, contents_ds = summaries_1)
 
@@ -239,7 +239,7 @@ def upload_basic():
     file = request.files['file']
 
     my_bucket = get_bucket()
-    my_bucket.objects.filter_by(Prefix ="basic_school/", file.filename ).put(Body=file)
+    my_bucket.objects.filter(Prefix ="basic_school/", file.filename ).put(Body=file)
 
     flash('File uploaded successfully')
     return redirect(url_for('users.storage_basic'))
