@@ -279,7 +279,7 @@ def upload_junior():
     file = request.files['file']
 
     my_bucket = get_bucket()
-    my_bucket.Object(file.filename).put(Body=file)
+    my_bucket.Object("junior_school/"+file.filename).put(Body=file)
 
     flash('File uploaded successfully')
     return redirect(url_for('users.storage_junior'))
@@ -320,7 +320,7 @@ def upload_senior():
     file = request.files['file']
 
     my_bucket = get_bucket()
-    my_bucket.Object(file.filename).put(Body=file)
+    my_bucket.Object("senior_school/"+file.filename).put(Body=file)
 
     flash('File uploaded successfully')
     return redirect(url_for('users.storage_senior'))
