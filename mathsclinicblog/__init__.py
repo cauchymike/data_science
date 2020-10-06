@@ -47,6 +47,7 @@ app.config["S3_KEY"] =  "AKIAJQB6S2LEVNKNBYNQ"
 app.config["S3_SECRET"] = "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"
 app.config["FLATPAGES_MARKDOWN_EXTENSIONS"] = ['fenced_code','codehilite']
 app.config[" FLATPAGES_EXTENSION"] = [".md"]
+app.config['MAX_CONTENT_LENGTH'] = 80 * 1024 * 1024
 app.config["MATHSCLINICCOMMENT_COMMENTS_PER_PAGE"] = 30
 app.jinja_env.filters['datetimeformat'] = datetimeformat
 app.jinja_env.filters['file_type'] = file_type
