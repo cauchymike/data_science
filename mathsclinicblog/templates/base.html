@@ -12,6 +12,15 @@
     <meta charset="UTF-8">
     <meta name = "viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
 </head>
+	<script>
+  function initFreshChat() {
+    window.fcWidget.init({
+      token: "b47303c3-1de8-4d34-9eb6-67661ae6e4c7",
+      host: "https://wchat.freshchat.com"
+    });
+  }
+  function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshdesk Messaging-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+</script>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,7 +28,7 @@
 	<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 <df-messenger
   chat-icon="https:&#x2F;&#x2F;storage.googleapis.com&#x2F;cloudprod-apiai&#x2F;8d8e4981-5a50-45aa-938e-5c58f994b7c4_x.png"
-  chat-title="WAJE-HR-BOT"
+  chat-title="DSME BOT"
   agent-id="f321f389-bb08-407a-8854-9f10052ba0c1"
   language-code="en"
 ></df-messenger>
