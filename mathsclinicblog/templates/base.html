@@ -11,16 +11,9 @@
     <link rel = "stylesheet" href ="{{url_for('users.pygments_css')}}">
     <meta charset="UTF-8">
     <meta name = "viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+	
 </head>
-	<script>
-  function initFreshChat() {
-    window.fcWidget.init({
-      token: "b47303c3-1de8-4d34-9eb6-67661ae6e4c7",
-      host: "https://wchat.freshchat.com"
-    });
-  }
-  function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshdesk Messaging-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
-	</script>
+	
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -87,5 +80,15 @@
 {% block content %}
 
 {% endblock %}
+	<script>
+  function initFreshChat() {
+    window.fcWidget.init({
+      token: "b47303c3-1de8-4d34-9eb6-67661ae6e4c7",
+      host: "https://wchat.freshchat.com"
+    });
+  }
+  function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshdesk Messaging-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+</script>
 </body>
+	
 </html>
